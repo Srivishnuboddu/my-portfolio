@@ -1,0 +1,86 @@
+header{
+    background-color: #24cbed;
+    margin: 0;
+    border: 0;
+    font-family: 'Courier New', Courier, monospace;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+h1{
+    color: #24cbed;
+    font-size: 40px;
+}
+header h1{
+    color: white;
+    margin: 0;
+    text-align: center;
+    
+}
+body{
+    margin: 0;
+    background-color: #24cbed25;
+
+}
+.buttonprop{
+    height: 30px;
+    border-radius: 9px;
+    border-color: aqua;
+    cursor: pointer;
+    margin: 10px;
+}
+.buttonprop:hover{
+    background-color: #1f9df1;
+    color: whitesmoke;
+    transition: all;
+    transform: translateY(-10px);
+}
+section{
+    height: 100vh;
+    border: 2px solid grey;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom:20px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 200px;
+}
+main{
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.submit{
+    height: 30px;
+    border-radius: 9px;
+    border-color: aqua;
+    cursor: pointer;
+}
+.submit:hover{
+    background-color: #e64e16;
+    color: whitesmoke;
+}
+.top{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    border-color: aqua;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+}
+footer{
+    height: 150px;
+    background-color: black;
+    color: lightgray;
+    
+}
