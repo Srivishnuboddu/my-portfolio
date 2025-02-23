@@ -5,6 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+         @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        header h1 {
+            animation: fadeIn 2s ease-in-out;
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+        header {
+            background: linear-gradient(45deg, #24cbed, #1f9df1);
+            animation: gradientAnimation 5s infinite alternate;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+        .buttonprop {
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+        .buttonprop:hover {
+            transform: scale(1.1);
+        }
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        #animated-text {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            border-right: 2px solid white;
+            animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -21,36 +71,51 @@
     <main>
         <section id="about">
             <h1>Boddu Sri Vishnu</h1>
-            <img src="myimg.jpg" alt="my image">
-
-            <p>Hello All!</p>
-            <p>Iam srivishnu,pursuing my graduation in <i>pragati engineering college surampalem</i>.<br>Actually iam passionate new technologies and learning skills. </p>
-            <p>Iam interested in Web Development </p>
-            <p>you can <strong>click here</strong> to know what i learned in HTML,CSS,JS.</p>
-
+            <img src="myimg.jpg" alt="Boddu Sri Vishnu">
+            <p>Hello! I am <strong>Boddu Sri Vishnu</strong>, an enthusiastic software developer and tech enthusiast currently pursuing my graduation at <i>Pragati Engineering College, Surampalem</i>.</p>
+            <p>I am passionate about <strong>Web Development</strong>, Artificial Intelligence & Machine Learning.</p>
+            <p>Here are some of my achievements and certifications:</p>
+            <ul>
+                <li>Certified in <strong>CS50's Introduction to Programming with Python</strong> (HarvardX)</li>
+                <li>IBM Artificial Intelligence Certification</li>
+                <li>Google Android Developer Certification</li>
+                <li>FORTINET Cybersecurity Internship</li>
+                <li>Salesforce AI Associate Certified</li>
+            </ul>
         </section>
+
         <section id="skills">
             <h1>My Skills</h1>
-            <ol>
-            <li>C programming</li>
-            <li>python programming</li>
-            <li>java programming</li>
-            <li>HTML,CSS,JS</li>
-            </ol>
+            <ul>
+                <li>Programming Languages: C, Python, Java, JavaScript</li>
+                <li>Frontend Development: HTML, CSS, JavaScript, React</li>
+                <li>Technologies : SQL Database, No SQL Database, Responsive Web Design</li>
+                <li>Machine Learning & AI: Flask, Django, Numpy, Sklearn</li>
+            </ul>
         </section>
         <section id="projects">
-            <h1>my Projects</h1>
+            <h1>My Projects</h1>
             <table border="1">
                 <tr>
-                <th>Project</th>
-                <th>Description</th>
+                    <th>Project</th>
+                    <th>Description</th>
                 </tr>
                 <tr>
-                    <td>portfolio website</td>
-                    <td>it is my own portfolio website designed by me</td>
+                    <td>AI-Powered Health Prediction</td>
+                    <td>Built a system for predicting lung and heart diseases using ML models.</td>
                 </tr>
+                <tr>
+                    <td>TaskMaster</td>
+                    <td>A to-do list application for efficient task management.</td>
+                </tr>
+                <tr>
+                    <td>IBM whatsonX assistant chatbot</td>
+                    <td>Developed a chatbot using IBM whatsonX</td>
+                </tr>
+                
             </table>
         </section>
+
         <section id="contact">
             <h2>Contact Me</h2>
             <p>If any queries, feel free to contact</p>
@@ -105,7 +170,36 @@
     <footer>
             <p>@ 2024 my portfolio...</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const text = document.getElementById("animated-text");
+            let index = 0;
+            const words = "WELCOME TO MY PORTFOLIO";
+            function typeEffect() {
+                if (index < words.length) {
+                    text.textContent += words.charAt(index);
+                    index++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+            text.textContent = "";
+            typeEffect();
+        });
 
+        function scrollToTop() {
+            window.scrollTo({ top: 10, behavior: 'smooth' });
+        }
+
+        document.addEventListener("scroll", function() {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.classList.add("visible");
+                }
+            });
+        });
+    </script>
 
     
     
